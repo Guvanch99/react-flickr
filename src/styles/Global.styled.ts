@@ -26,26 +26,4 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
-  input {
-    @media (max-width: 30em) {
-      &::-webkit-input-placeholder {
-        text-align: center;
-      }
-
-      &:-moz-placeholder {
-        /* Firefox 18- */
-        text-align: center;
-      }
-
-      &::-moz-placeholder {
-        /* Firefox 19+ */
-        text-align: center;
-      }
-
-      &:-ms-input-placeholder {
-        text-align: center;
-      }
-    }
-  }
-
 `
