@@ -6,12 +6,14 @@ import {GlobalStyles} from "./styles/Global.styled";
 
 import { rootSaga } from './store/rootSaga'
 import { sagaMiddleware } from './store/store'
+import {Footer, Header} from "./components";
 
 const App = () => {
   sagaMiddleware.run(rootSaga)
 
   return (
     <ThemeProvider theme={theme}>
+      <Header/>
       <GlobalStyles/>
       <Router>
         <Routes>
@@ -20,6 +22,7 @@ const App = () => {
           <Route path='*' element={<Error/>}/>
         </Routes>
       </Router>
+      <Footer/>
     </ThemeProvider>
   )
 }
