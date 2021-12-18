@@ -1,7 +1,8 @@
 import {createGlobalStyle} from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Rosario:wght@400;700&display=swap');
 
   * {
     margin: 0;
@@ -14,8 +15,7 @@ export const GlobalStyles = createGlobalStyle`
     width: 100%;
     font-size: 62.5%;
     overflow-x: hidden;
-    font-family: 'Roboto', sans-serif;
-    background: #1d3c45;
+    font-family: 'Rosario', sans-serif;
   }
 
   ul {

@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
-import Button from '../button';
+import Button from '../button'
+import * as S from './styled'
 
 type TProps = {
   image: string
@@ -10,14 +11,14 @@ type TProps = {
 
 const ImageCard:FC<TProps> = ({image, title, description, link}) => {
   return (
-    <figure>
-      <img src={image} alt=""/>
-      <div>
-        <h1>{title}</h1>
-        <p>{description}</p>
+    <S.Container>
+      <S.Image src={image} alt={title}/>
+      <S.Description>
+        <S.Title>{title}</S.Title>
+        <S.Text>{description}</S.Text>
         <Button link={link}/>
-      </div>
-    </figure>
+      </S.Description>
+    </S.Container>
   )
 }
 

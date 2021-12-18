@@ -1,10 +1,5 @@
 import CardList from "../../components/card-list";
 
-const Main = () => (
-  <>
-    <CardList/>
-    <h1>Main</h1>
-  </>
-)
+const Main = () => <CardList/>
 
 export default Main
