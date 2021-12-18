@@ -1,12 +1,17 @@
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import {ThemeProvider} from "styled-components"
+
 import {Main, Secondary, Error} from "./pages";
+
+import {Footer, Header} from "./components";
+
 import {theme} from "./styles/Theme.styled";
+
 import {GlobalStyles} from "./styles/Global.styled";
 
 import { rootSaga } from './store/rootSaga'
 import { sagaMiddleware } from './store/store'
-import {Footer, Header} from "./components";
+
 
 const App = () => {
   sagaMiddleware.run(rootSaga)
