@@ -1,24 +1,18 @@
 import {useEffect} from "react";
 
-import {CardList,Loader} from "../../components";
-
-import {DB} from "../../core/axios";
-
-import {IItems} from "../../models/typings";
+import CardList from "../../components/card-list";
+import {useDispatch, useSelector} from "react-redux";
+import {getCards} from "../../store/card-list/actions";
+import {RootState} from "../../store/store";
 
 const Main = () => {
-
+  const dispatch = useDispatch()
+  const {cards} = useSelector((state: RootState) => state.cards)
+  console.log(cards)
   useEffect(() => {
-    DB.get<{items:IItems[]}>('https://api.flickr.com/services/feeds/photos_public.gne?&format=json&nojsoncallback=true').then(({data}) => {
-      console.log(data.items)
-    })
+    dispatch(getCards())
   }, [])
-
-  return (
-    <>
-      {Card?<CardList/>:<Loader/>}
-    </>
-  )
+  return <CardList/>
 }
 
 export default Main

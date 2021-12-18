@@ -1,6 +1,6 @@
 import React from 'react';
-import {ImageCard} from "../";
 
+import {ImageCard} from "../index";
 import * as S from './styled';
 
 const CardList = () => (

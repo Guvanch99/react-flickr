@@ -7,7 +7,7 @@ type TProps = {
 }
 
 const Button: FC<TProps> = ({link}) => (
-  <S.Button href={link}>
+  <S.Button href={link} target="_blank">
     Explore ➔
   </S.Button>
 );

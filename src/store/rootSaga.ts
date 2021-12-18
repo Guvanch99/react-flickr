@@ -1,5 +1,6 @@
-import {call, fork } from 'redux-saga/effects'
+import {call} from 'redux-saga/effects'
+import cardsSaga from './card-list/saga'
 
 export function* rootSaga() {
-   /* yield call([fork(jobsListSaga), fork(jobDescriptionSaga)])*/
+   yield call(cardsSaga)
 }
