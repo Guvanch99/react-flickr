@@ -7,6 +7,16 @@ export const Container = styled.figure`
   background: #FFFFFF;
   box-shadow: 0 .6px .9rem rgba(0, 0, 0, 0.08);
   width: 17.875rem;
+  transition: all .6s ease-in;
+  opacity: .8;
+  margin-bottom: 1rem;
+  &:hover{
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  @media (max-width: 64em) {
+    margin: 1rem;
+  }
 `
 export const Description = styled.div`
   ${flex({justify: 'center', align: 'flex-start'})};

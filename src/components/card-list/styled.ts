@@ -7,4 +7,8 @@ export const CardContainer = styled.section`
   flex-wrap: wrap;
   background: #EFEFEF;
   padding: 5rem 4.75rem;
+  @media (max-width: 64em) {
+    justify-content: center;
+    align-items: center;
+  }
 `

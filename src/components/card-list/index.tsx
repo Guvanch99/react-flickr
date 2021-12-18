@@ -1,29 +1,38 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import {ImageCard} from "../index";
 import * as S from './styled';
+import {useDispatch, useSelector} from "react-redux";
+import {RootState} from "../../store/store";
+import {getCards} from "../../store/card-list/actions";
 
-const CardList = () => (
-  <S.CardContainer>
-    <ImageCard
-      image={'https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'}
-      title={'Card Header'}
-      description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi consequuntur doloremque, explicabo illo ipsa ipsum laudantium magni nam, natus necessitatibus quos ratione recusandae repellendus sapiente soluta unde vero voluptatum?'}
-      link={'https://www.flickr.com/people/60532753@N07'}
-    />
-    <ImageCard
-      image={'https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'}
-      title={'Card Header'}
-      description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi consequuntur doloremque, explicabo illo ipsa ipsum laudantium magni nam, natus necessitatibus quos ratione recusandae repellendus sapiente soluta unde vero voluptatum?'}
-      link={'https://www.flickr.com/people/60532753@N07'}
-    />
-    <ImageCard
-      image={'https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'}
-      title={'Card Header'}
-      description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi consequuntur doloremque, explicabo illo ipsa ipsum laudantium magni nam, natus necessitatibus quos ratione recusandae repellendus sapiente soluta unde vero voluptatum?'}
-      link={'https://www.flickr.com/people/60532753@N07'}
-    />
-  </S.CardContainer>
-);
+const CardList = () => {
+    const dispatch = useDispatch()
+    const {cards} = useSelector((state: RootState) => state.cards)
+
+    console.log(cards)
+
+    useEffect(() => {
+        dispatch(getCards())
+    }, [])
+
+    return (
+        <S.CardContainer>
+            {
+                cards?.map(
+                    ({link, title, description, media}, idx) => (
+                        <ImageCard
+                            key={idx}
+                            image={media.m}
+                            title={title}
+                            description={description}
+                            link={link}
+                        />
+                    )
+                )
+            }
+        </S.CardContainer>
+    )
+}
 
 export default CardList;
