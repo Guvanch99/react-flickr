@@ -20,6 +20,7 @@ export const Loader = styled.section`
   height: 8rem;
   animation: ${Spin} 2s linear infinite;
 `
+
 export const LoaderContainer = styled.article`
   width: 100vw;
   height: 100vh;

@@ -2,20 +2,21 @@ import styled from "styled-components";
 import {flex} from "../../styles/mixin.styled";
 
 export const Button = styled.a`
-  width: 235px;
-  height: 44px;
+  width: 14.6875rem;
+  height: 2.75rem;
   ${flex({justify: 'center', align: 'center'})};
   border: none;
   text-align: center;
   background: #F5F5F5;
-  border-radius: 3px;
+  border-radius: .1875rem;
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 19px;
+  line-height: 1.1875rem;
   color: ${({theme}) => theme.colors.secondary};
-  &:hover{
+
+  &:hover {
     border: 1px solid ${({theme}) => theme.colors.secondary};
   }
 `

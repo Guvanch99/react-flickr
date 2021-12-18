@@ -1,5 +1,7 @@
 import React, {FC} from 'react';
-import Button from '../button'
+
+import {Button} from '../'
+
 import * as S from './styled'
 
 type TProps = {

@@ -1,13 +1,10 @@
 import styled from "styled-components";
+
 import {flex} from "../../styles/mixin.styled";
 
 export const CardContainer = styled.section`
   ${flex({justify: 'space-between', align: 'flex-start'})};
+  flex-wrap: wrap;
   background: #EFEFEF;
-  padding: 81px 76px;
-;
-`
-export const HeaderText = styled.h1`
-  margin-left: 1rem;
-  color: #fff;
+  padding: 5rem 4.75rem;
 `
