@@ -15,9 +15,7 @@ const Main = () => {
   }, [])
 
   return (
-    <>
-      {Card?<CardList/>:<Loader/>}
-    </>
+    <CardList/>
   )
 }
 
