@@ -14,7 +14,5 @@ export interface IItems {
 }
 
 export interface IResponse{
-  data:{
     items:IItems[]
-  }
 }

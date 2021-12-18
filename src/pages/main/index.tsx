@@ -1,18 +1,24 @@
 import {useEffect} from "react";
 
-import CardList from "../../components/card-list";
+import {CardList,Loader} from "../../components";
+
 import {DB} from "../../core/axios";
-import {IItems, IResponse} from "../../models/typings";
+
+import {IItems} from "../../models/typings";
 
 const Main = () => {
 
   useEffect(() => {
-    DB.get<IResponse>('https://api.flickr.com/services/feeds/photos_public.gne?&format=json&nojsoncallback=true').then(({data}) => {
-      console.log(data.data.items)
+    DB.get<{items:IItems[]}>('https://api.flickr.com/services/feeds/photos_public.gne?&format=json&nojsoncallback=true').then(({data}) => {
+      console.log(data.items)
     })
   }, [])
 
-  return <CardList/>
+  return (
+    <>
+      {Card?<CardList/>:<Loader/>}
+    </>
+  )
 }
 
 export default Main

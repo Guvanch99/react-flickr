@@ -1,3 +1,5 @@
+import {memo} from 'react'
+
 import * as S from './styled'
 
 const Header=()=>(
@@ -6,4 +8,4 @@ const Header=()=>(
   </S.Header>
 )
 
-export default Header
+export default memo(Header)
